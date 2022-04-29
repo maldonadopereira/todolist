@@ -7,7 +7,7 @@ jobs:
     env:
       PIPENV_NO_INHERIT: 1
       PIPENV_IGNORE_VIRTUALENVS: 1
-    runs-on: : ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -18,7 +18,7 @@ jobs:
       - name: Instalar Dependências
         run: |
           pip install pipenv
-          sync pipenv --dev
+          pipenv sync --dev
       - name: Rodar testes Autmáticos
         run: |
           pipenv run pytest todolist
